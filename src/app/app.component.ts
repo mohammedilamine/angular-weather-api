@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-weather-api';
+  name: string = 'Lamine';
+
+  constructor() {
+    console.log(123)
+    this.name = "Ted"
+
+  }
+
+
 }
