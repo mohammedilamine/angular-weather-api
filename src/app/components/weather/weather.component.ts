@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { WeatherService} from '../../services/weather.service'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -10,7 +11,7 @@ export class WeatherComponent implements OnInit {
 
   // types:Type[];
 
-  constructor() { }
+  constructor(private weatherService:WeatherService) { }
 
   ngOnInit() {
   }

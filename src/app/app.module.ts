@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 
@@ -17,7 +18,8 @@ import { WeatherComponent } from './components/weather/weather.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
