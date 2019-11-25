@@ -13,7 +13,7 @@ export class WeatherComponent implements OnInit {
 
   lat: number;
   long :number;
-  iconId:string="01d";
+  iconId:string;
 
   placeformated:string;
   main:string;
@@ -45,10 +45,6 @@ export class WeatherComponent implements OnInit {
   
        }
      ]
-     console.log(this.details)   
-  
-
-    
   }
 
 
