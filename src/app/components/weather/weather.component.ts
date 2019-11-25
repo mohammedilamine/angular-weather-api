@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService} from '../../services/weather.service'
-// import { WeatherDetails} from '../../modules/WeatherDetails'
+import { Detail} from '../../modules/Detail'
 
 @Component({
   selector: 'app-weather',
@@ -8,6 +8,7 @@ import { WeatherService} from '../../services/weather.service'
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
+  details:Detail[];
 
 
   lat: number;
@@ -27,45 +28,62 @@ export class WeatherComponent implements OnInit {
   constructor(private weatherService:WeatherService) { }
 
   ngOnInit() {
+    this.details = [
+      {
+       title: "Wind",
+       value:"TBD"
+  
+       },
+     {
+       title: "Temperature",
+       value:"TBD"
+  
+       },
+     {
+       title: "Humidity",
+       value:"TBD"
+  
+       }
+     ]
+     console.log(this.details)   
+  
+
+    
   }
 
 
-  public handleAddressChange(place) {
+
+   handleAddressChange(place) {
 
     // console.log(place)
     this.placeformated = place['formatted_address'];
-    console.log(this.placeformated) 
+    // console.log(this.placeformated) 
     this.lat = place.geometry.location.lat()
     this.long = place.geometry.location.lng()
-    console.log(this.lat)
-    console.log(this.long)
+    // console.log(this.lat)
+    // console.log(this.long)
 
-    // requesting weather details from the weatherService:
+
+    //  ** Requesting weather details from the weatherService ** //
 
     this.weatherService.getWeather(this.lat,this.long).subscribe(details => {
-      
-
+  
       // console.log(details)
       this.iconId = details.weather[0].icon;
       this.icon = `http://openweathermap.org/img/wn/${this.iconId}@2x.png`
-      console.log(this.icon);
-
-      console.log(details.weather[0].main)
-      console.log(details.weather[0].description);
-      console.log(details.main.humidity)
-      console.log(details.main.temp)
-      console.log(details.wind.speed)
       this.main = details.weather[0].main;
       this.description = details.weather[0].description;
       this.humidity = details.main.humidity;
       this.temp = details.main.temp;
       this.speed = details.wind.speed
-
-
-
+      this.details[0].value = this.speed
+      this.details[1].value = this.temp
+      this.details[2].value = this.humidity
+      
     })
 
     }
+
     
 }
 
