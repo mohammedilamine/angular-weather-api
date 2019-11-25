@@ -30,7 +30,7 @@ export class WeatherComponent implements OnInit {
   }
 
 
-  public handleAddressChange(place: object) {
+  public handleAddressChange(place) {
 
     // console.log(place)
     this.placeformated = place['formatted_address'];
