@@ -10,7 +10,6 @@ import { Detail} from '../../modules/Detail'
 export class WeatherComponent implements OnInit {
   details:Detail[];
 
-
   lat: number;
   long :number;
   iconId:string;
@@ -21,7 +20,7 @@ export class WeatherComponent implements OnInit {
   humidity:string;
   temp:number;
   speed:number;
-  icon:string="http://openweathermap.org/img/wn/02d@2x.png";
+  icon:string;
 
 
 
