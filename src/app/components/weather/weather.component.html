@@ -2,15 +2,15 @@
 
   <!--  header component -->
 
-  <app-header></app-header>
+    <app-header [icon]="icon" ></app-header>
 
   <!-- content component  -->
 
-  <div class="content">
-    <div class="general-information">
-      <div class="status" > {{placeformated ? placeformated : 'Enter A Location'}} </div>
-      <div class="location" >{{description ? description : 'To Find The Weather' }}</div>
-  </div>
+    <div class="content">
+      <div class="general-information">
+        <div class="status" > {{placeformated ? placeformated : 'Enter A Location'}} </div>
+        <div class="location" >{{description ? description : 'To Find The Weather' }}</div>
+    </div>
 
 
     <!-- details component -->
@@ -20,7 +20,7 @@
       </app-details>
     </div>
 
-    <!-- the search input -->
+    <!-- the search-input component-->
     <div class="city-search-container">
         <input ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" class="city-search"  />
     </div>

@@ -20,7 +20,8 @@ export class WeatherComponent implements OnInit {
   humidity:string;
   temp:number;
   speed:number;
-  icon:string;
+  icon:string="http://openweathermap.org/img/wn/02d@2x.png";
+
 
 
 
